@@ -1,5 +1,6 @@
 # Cloud Functions
-This repository contains cloud functions 
+This repository contains cloud functions
+ 
 **notifyPubSub**: triggered by HTTP request, so it will publish the message on the specific ***pub-sub topic***.
 
 **sendNotification**: it is supposed to be triggered by Publish on the specific ***pub-sub topic***
