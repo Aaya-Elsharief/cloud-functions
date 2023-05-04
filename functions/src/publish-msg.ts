@@ -3,12 +3,12 @@ import {PubSub} from "@google-cloud/pubsub";
 
 const pubSubClient = new PubSub();
 
-// add your topic name
-const topicNameOrId = "topic name";
+// add topic name
+const topicName = "topic name";
 
 export const publisheMsg = (request: any, response: any ) => {
   const data = JSON.stringify({data: "You have a new message!"});
-  publishMessage(topicNameOrId, data);
+  publishMessage(topicName, data);
   response.send("Message sent to pubsub!");
 };
 
