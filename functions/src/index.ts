@@ -1,9 +1,9 @@
 import * as functions from "firebase-functions";
+import {publisheMsg} from "./publish-msg";
+import {sendNotification} from "./notify";
 
-// // Start writing functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+export const notifyPubSub = functions.https.onRequest(publisheMsg);
+
+export const sendSth = functions.pubsub.topic("testO")
+  .onPublish(sendNotification);
+
